@@ -162,6 +162,29 @@ def generate_launch_description():
         executable="web_video_server",
         name="web_video_server",
     )
+    # lanedetector node
+    lanedetector_node = Node(
+        package="deepracer_av",
+        executable="lanedetector.py",
+        name="lanedetector",
+        respawn=True
+    )
+
+    # lanekeeper node
+    lanekeeper_node = Node(
+        package="deepracer_av",
+        executable="lanekeeper.py",
+        name="lanekeeper",
+        respawn=True
+    )
+
+    # lane visualizer node
+    lane_visualizer_node = Node(
+        package="deepracer_av",
+        executable="lane_visualizer.py",
+        name="lane_visualizer",
+        respawn=True
+    )
     ld.add_action(traffic_sign_node)
     ld.add_action(object_detection_node)
     ld.add_action(deepdriver_navigation_node)
@@ -183,4 +206,7 @@ def generate_launch_description():
     ld.add_action(usb_monitor_node)
     ld.add_action(webserver_publisher_node)
     ld.add_action(web_video_server_node)
+    ld.add_action(lanedetector_node)
+    ld.add_action(lanekeeper_node)
+    ld.add_action(lane_visualizer_node)
     return ld
