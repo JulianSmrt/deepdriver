@@ -26,6 +26,11 @@ OBJECT_DETECTION_INFERENCE_TOPIC = f"{OBJECT_DETECTION_PKG_NS}/inference_results
 SERVO_PKG_NS = "/servo_pkg"
 SET_LED_CTRL_SERVICE = f"{SERVO_PKG_NS}/set_led_state"
 
+# New constants for lane detection package
+LANE_DETECTION_PKG_NS = "/lane_detection_pkg"
+LANE_DETECTION_RESULTS_TOPIC = f"{LANE_DETECTION_PKG_NS}/lane_detection_results"
+LANE_DETECTION_SERVICE_NAME = f"{LANE_DETECTION_PKG_NS}/perform_detection"
+
 
 class DeltaValueMap:
     # TODO UPDATE DOCS.
